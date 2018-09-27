@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["quant"].value;
+	var y = document.forms["myForm"]["ticker"].value;
+    if (x == ""||x<10||x>100||((x%10)!=0)) {
+        alert("Invalid Quantity");
+        return false;
+    }
+	else if(y === ""){
+        alert("Enter Ticker!");
+        return false;
+    }
+}
+</script>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th><b>TICKER</th>
+    <th><b>PRICE</th> 
+  </tr>
+  <tr>
+    <td>WIPRO</td>
+    <td>298.45</td>
+  </tr>
+  <tr>
+    <td>INFOSYS</td>
+    <td>949.95</td>
+  </tr>
+  <tr>
+    <td>TCS</td>
+    <td>2713.70</td>
+  </tr>
+  <tr>
+    <td>Tech Mahindra</td>
+    <td>485.85</td>
+  </tr>
+</table>
+<br>
+<h1> Stock Trading </h1>
+<br>
+<form name="myForm" onsubmit="return validateForm()">
+<table>
+	<tr>
+		<td>Ticker:</td>
+		<td><input type="text" name="ticker"></input>
+	</tr>
+	<tr>
+		<td>Quantity:</td>
+		<td><input type="number" name="quant"></input>
+	</tr>
+	<tr>
+		<td><input type="submit"></input>
+	</tr>
+</table>
+</form>
+</body>
+</html>
